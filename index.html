@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDA Palindrome Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+        <h1>PDA Simulator for Palindrome Recognition</h1>
+    </header>
+
+    <section id="pda-definition">
+        <h2>📖 Understanding Pushdown Automaton (PDA)</h2>
+        <p>
+            A Pushdown Automaton (PDA) is a type of computational model that extends the 
+            concept of Finite State Machines (FSM) by adding an auxiliary stack. 
+            The stack allows it to keep track of past inputs, making it powerful enough 
+            to recognize context-free languages (CFLs).
+        </p>
+        <ul>
+            <li>PDAs have states and transitions like FSMs but also interact with a stack.</li>
+            <li>They can **push**, **pop**, or **read** from the stack during transitions.</li>
+            <li>Used in **parsing programming languages** (e.g., Java, Python syntax).</li>
+        </ul>
+        <img src="images/pda_diagram.jpg" alt="Pushdown Automaton Example">
+    </section>
+    
+    <section id="palindrome-details">
+        <h2>🔄 What is a Palindrome?</h2>
+        <p>
+            A palindrome is a word, phrase, number, or sequence that reads the same **forward and backward**.
+            Examples include:
+        </p>
+        <ul>
+            <li><b>Word Palindromes:</b> racecar, madam, radar, level</li>
+            <li><b>Number Palindromes:</b> 121, 1331, 45654</li>
+            <li><b>Phrase Palindromes:</b> "A man, a plan, a canal, Panama!"</li>
+        </ul>
+        <img src="images/palindrome.png" alt="Palindrome Examples">
+    </section>
+    
+    <section id="pda-palindrome-working">
+        <h2>⚙️ How Does a PDA Recognize a Palindrome?</h2>
+        <p>
+            The PDA processes palindromes using a **stack-based approach**:
+        </p>
+        <ol>
+            <li>Push the first half of the string onto the stack.</li>
+            <li>Skip the middle character if the length is odd.</li>
+            <li>Pop elements and compare them with the second half.</li>
+            <li>If all characters match, the string is a palindrome!</li>
+        </ol>
+        <img src="images/pda_palindrome.png" alt="PDA Palindrome Process">
+    </section>
+    
+    
+
+    <div id="container">
+    
+        <section id="checker">
+            <h2>Check if a String is a Palindrome</h2>
+            <input type="text" id="inputString" placeholder="Enter a string...">
+            <button id="checkBtn">Check</button>
+            <div id="result"></div>
+            <h3>Stack Visualization</h3>
+            <div id="stackVisualization"></div>
+            <h3>Step-by-Step Process</h3>
+            <div id="steps"></div>
+        </section>
+
+        
+        <div id="rightSection">
+            <h2>🔄 Pushdown Automaton (PDA)</h2>
+            <div id="stateDiagramWrapper">
+                <svg id="pdaSVG" width="100%" height="150">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+                            <polygon points="0,0 10,5 0,10" fill="black"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+            <div id="pdaStack"></div>
+        </div>
+    </div>
+    
+   
+    
+
+    <footer>
+        <p>© 2025 PDA Palindrome Simulator | Made with ❤️ for Learning</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
